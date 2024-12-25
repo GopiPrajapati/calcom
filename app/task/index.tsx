@@ -1,5 +1,5 @@
 import { useTaskContext } from "@/src/context/AppContext";
-import { useNavigation, useRouter } from "expo-router";
+import { useRouter } from "expo-router";
 import React, { FC, useEffect, useMemo, useRef, useState } from "react";
 import {
   FlatList,

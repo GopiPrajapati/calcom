@@ -1,13 +1,15 @@
-import { Link, useRouter } from "expo-router";
+import { useRouter } from "expo-router";
+import { useEffect } from "react";
 import { View } from "react-native";
 
 export default function Index() {
-  const navigation = useRouter();
-  // const navigation = useNavigation();
+  const route = useRouter();
 
-  // useEffect(() => {
-  //   navigation?.navigate("/task/TaskListScreen");
-  // }, []);
+  useEffect(() => {
+    setTimeout(() => {
+      route.navigate("/task");
+    }, 700);
+  }, []);
 
   return (
     <View
@@ -16,11 +18,6 @@ export default function Index() {
         justifyContent: "center",
         alignItems: "center",
       }}
-    >
-      <Link href={"/task"} style={{ flex: 1 }}>
-        Gopi{" "}
-      </Link>
-      {/* <Text>Edit app/index.tsx to edit this screen.</Text> */}
-    </View>
+    ></View>
   );
 }

@@ -2,13 +2,13 @@ import MText from "@/src/components/Text/MText";
 import { useTaskContext } from "@/src/context/AppContext";
 import { CreateTaskScreenProps } from "@/src/interfaces/CreateTaskScreenProps";
 import colors from "@/src/utitlity/colors";
-import { ResizeMode, Video } from "expo-av";
-import { useVideoPlayer, VideoView } from "expo-video";
-import React, { FC, useEffect, useState } from "react";
+import { Video } from "expo-av";
+import { Image } from "expo-image";
+import * as MediaLibrary from "expo-media-library";
+import React, { FC, useState } from "react";
 import {
   Button,
   FlatList,
-  // Image,
   ScrollView,
   StyleSheet,
   TextInput,
@@ -19,8 +19,6 @@ import {
   heightPercentageToDP as hp,
   widthPercentageToDP as wp,
 } from "react-native-responsive-screen";
-import * as MediaLibrary from "expo-media-library";
-import { Image } from "expo-image";
 
 const CreateTask: FC<CreateTaskScreenProps> = ({ route, navigation }) => {
   const { setTasks } = useTaskContext();
@@ -151,16 +149,6 @@ const CreateTask: FC<CreateTaskScreenProps> = ({ route, navigation }) => {
             );
           }}
         />
-        {/* <Image
-          // source={{ uri: item?.item }}
-          source={{
-            // uri: "ph://99D53A1F-FEEF-40E1-8BB3-7DD55A43C8B7/L0/001",
-            uri: "ph://CC95F08C-88C3-4012-9D6D-64A413D254B3/L0/001",
-          }}
-          height={hp(15)}
-          width={wp(43)}
-          onError={(e) => console.log("error", e)}
-        /> */}
         <FlatList
           data={videos}
           keyExtractor={(item, index) => String(index)}

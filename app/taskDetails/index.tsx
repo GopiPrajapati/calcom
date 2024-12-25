@@ -1,6 +1,6 @@
 import { TaskDetailsScreenProps } from "@/src/interfaces/TaskDetailsScreenProps";
 import { ResizeMode, Video } from "expo-av";
-import { useLocalSearchParams, useSearchParams } from "expo-router/build/hooks";
+import { useLocalSearchParams } from "expo-router/build/hooks";
 import React, { FC } from "react";
 
 import { FlatList, Image, StyleSheet, Text, View } from "react-native";
@@ -31,7 +31,6 @@ const TaskDetails: FC<TaskDetailsScreenProps> = ({ route }) => {
             data={task?.videos}
             keyExtractor={(item, index) => String(index)}
             renderItem={(item) => {
-              console.log("item", item.item);
               return (
                 <View
                   style={{
